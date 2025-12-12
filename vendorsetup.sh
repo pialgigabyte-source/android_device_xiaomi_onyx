@@ -3,6 +3,9 @@
 echo 'Cloning Bcr Tree'
 	git clone https://github.com/xiaomi-sm8750-onyx/android_vendor_bcr.git -b lineage-23.2 vendor/bcr
 
+echo 'Cloning Gcam Tree'
+	git clone https://gitlab.com/xiaomi-sm8750-onyx/android_vendor_mgc.git -b lineage-23.2 vendor/mgc
+
 echo 'Cloning Hardware Tree'
         git clone https://github.com/xiaomi-sm8750-onyx/android_hardware_xiaomi.git -b lineage-23.2 hardware/xiaomi
 
