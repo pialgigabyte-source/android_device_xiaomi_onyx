@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo 'Cloning Bcr Tree'
+	git clone https://github.com/xiaomi-sm8750-onyx/android_vendor_bcr.git -b lineage-23.2 vendor/bcr
+
 echo 'Cloning Hardware Tree'
         git clone https://github.com/xiaomi-sm8750-onyx/android_hardware_xiaomi.git -b lineage-23.2 hardware/xiaomi
 
