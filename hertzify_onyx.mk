@@ -8,12 +8,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Matrixx stuff
-$(call inherit-product, vendor/matrixx/config/common_full_phone.mk)
+$(call inherit-product, vendor/hertzify/config/common_full_phone.mk)
 
 # Inherit from onyx device
 $(call inherit-product, device/xiaomi/onyx/device.mk)
 
-PRODUCT_NAME := matrixx_onyx
+# Device identifier. This must come after all inclusions
+PRODUCT_NAME := hertzify_onyx
 PRODUCT_DEVICE := onyx
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := POCO
@@ -34,8 +35,9 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_DISABLE_EPPE := true
-TARGET_HAS_UDFPS := true
+TARGET_CUSTOM_UDFPS := true
 WITH_GMS := true
 
 # Maintainer & Build type
-MATRIXX_MAINTAINER := SharmagRit
+HERTZIFY_MAINTAINER := "Raphael_X_Kaveer"
+HERTZIFY_BUILD_TYPE := OFFICIAL
