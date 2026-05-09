@@ -50,7 +50,7 @@ TARGET_PROVIDES_LIBAR_PAL := true
 TARGET_BOOTLOADER_BOARD_NAME := sun
 
 # Display
-TARGET_SCREEN_DENSITY := 504
+TARGET_SCREEN_DENSITY := 450
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
@@ -61,7 +61,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
 
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix_aidl.xml
-DEVICE_MANIFEST_FILE := \
+DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/configs/hidl/manifest.xml \
     hardware/qcom-caf/sm8750/audio/primary-hal/configs/sun/manifest_audio_qti_services.xml
 
@@ -156,7 +156,7 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
--include vendor/lineage/config/BoardConfigReservedSize.mk
+-include vendor/hertzify/config/BoardConfigReservedSize.mk
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
@@ -184,9 +184,11 @@ include device/qcom/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Vendor security patch
-VENDOR_SECURITY_PATCH := 2026-01-01
+BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
+VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
